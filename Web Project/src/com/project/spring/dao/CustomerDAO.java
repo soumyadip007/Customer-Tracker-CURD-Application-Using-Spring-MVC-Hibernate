@@ -8,6 +8,6 @@ import com.project.spring.entity.Customer;
 
 public interface CustomerDAO {
 
-	@Autowired
+	
 	public List<Customer> getCustomer();
 }
