@@ -22,6 +22,12 @@
    
   <h1 class="display-2">Customer Tracker</h1>
   <br>
+  
+<input type="button" class="btn btn-success" value="Add Customer"
+onclick="window.location.href='showFormForAdd'; return false;"
+/>
+
+
 <table  class="table table-striped table-dark">
   <thead >
 
