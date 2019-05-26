@@ -18,7 +18,7 @@
 	<th>Email</th>
 </tr>
 
-<c:forEach var="temp" items="${customer}">
+<c:forEach var="temp" items="${customers}">
 <tr>
 	<th>${temp.firstname}</th>
 	<th>${temp.lastname}</th>
