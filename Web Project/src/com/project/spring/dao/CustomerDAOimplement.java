@@ -28,7 +28,7 @@ public class CustomerDAOimplement implements CustomerDAO {
 					
 			// create a query
 			Query<Customer> theQuery = 
-					currentSession.createQuery("from customer", Customer.class);
+					currentSession.createQuery("from Customer", Customer.class);
 			
 			// execute query and get result list
 			List<Customer> customers = theQuery.getResultList();
@@ -37,4 +37,4 @@ public class CustomerDAOimplement implements CustomerDAO {
 			return customers;
 		}
 
-}
+	}
