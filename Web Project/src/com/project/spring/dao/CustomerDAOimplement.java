@@ -37,4 +37,18 @@ public class CustomerDAOimplement implements CustomerDAO {
 			return customers;
 		}
 
+		@Override
+		@Transactional
+		public void saveCustomer(Customer theCustomer) {
+			
+			
+			// get the current hibernate session
+				Session currentSession = sessionFactory.getCurrentSession();
+								
+			// create a query
+				currentSession.save(theCustomer);
+				
+				
+		}
+
 	}
