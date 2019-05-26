@@ -51,4 +51,16 @@ public class CustomerDAOimplement implements CustomerDAO {
 				
 		}
 
+		@Override
+		@Transactional
+		public Customer getCustomer(int theID) {
+			// get the current hibernate session
+			Session currentSession = sessionFactory.getCurrentSession();
+		
+			//get the id
+			Customer theCustomer=currentSession.get(Customer.class,theID);
+			
+			return theCustomer;
+		}
+
 	}

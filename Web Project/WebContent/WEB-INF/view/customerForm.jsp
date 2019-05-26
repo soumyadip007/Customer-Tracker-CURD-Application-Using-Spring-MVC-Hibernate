@@ -26,10 +26,12 @@
    
    
   <h1 class="display-2">Customer Tracker</h1>
+  
+  <h3 class="display-4">Add New Customer</h3>
   <br>
 <form:form action="saveForm" class="form-control"  modelAttribute="customer" method="post">
 
- First Name: <form:input type="text" class="form-control"  path="firstName" placeholder="Enter first name"/>
+ First Name: <form:input type="text" class="form-control"  path="firstName" placeholder="Enter first name" "/>
   <br>
   
    Last Name: <form:input type="text" class="form-control"  path="lastName" placeholder="Enter last name"/>

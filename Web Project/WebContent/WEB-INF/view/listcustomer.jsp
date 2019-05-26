@@ -35,6 +35,7 @@ onclick="window.location.href='showFormForAdd'; return false;"
 	<th scope="col">First Name</th>
 	<th scope="col">Last Name</th>
 	<th scope="col">Email</th>
+	<th scope="col">Update</th>
 </tr>
 </thead  >
   <tbody>
@@ -43,6 +44,18 @@ onclick="window.location.href='showFormForAdd'; return false;"
 	<td>${temp.firstName}</td>
 	<td>${temp.lastName}</td>
 	<td>${temp.email}</td>
+	<td>
+	
+<c:url var="updateLink" value="/customer/showFormForUpdate">
+	<c:param name="customerID" value="${temp.id}" />
+</c:url>	
+<!-- - 
+<input type="button" class="btn btn-outline-primary" value="Update"
+onclick="window.location.href='showFormForUpdate?id=${temp.id}'; return false;"
+/>-->	
+<a href="${updateLink }" >Update</a>
+
+	</td>
 </tr>
 
 </c:forEach>

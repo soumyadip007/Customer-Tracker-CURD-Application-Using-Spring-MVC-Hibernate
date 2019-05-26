@@ -30,4 +30,12 @@ public class CustomerServiceImplement implements CustomerService {
 		customerDAO.saveCustomer(theCustomer);
 	}
 
+	@Override
+	public Customer getCustomer(int theID) {
+		
+		
+		
+		return customerDAO.getCustomer(theID);
+	}
+
 }
