@@ -73,7 +73,8 @@ public class CustomerController {
 		
 		
 		//Delete the customer
-		System.out.println("1");
+		System.out.println("ID is "+id);
+		
 		customerService.deleteCustomer(id);
 		
 		return "redirect:/customer/list";

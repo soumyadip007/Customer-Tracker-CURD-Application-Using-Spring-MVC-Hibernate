@@ -65,6 +65,7 @@ public class CustomerDAOimplement implements CustomerDAO {
 		}
 
 		@Override
+		@Transactional
 		public void deleteCustomer(int id) {
 		
 
@@ -73,7 +74,7 @@ public class CustomerDAOimplement implements CustomerDAO {
 		
 			
 			//delete the id
-			Query theQuery=currentSession.createQuery("delete from Customer where if=:theID");
+			Query theQuery=currentSession.createQuery("delete from Customer where id=:theID");
 			theQuery.setParameter("theID",id);
 			
 			theQuery.executeUpdate();
