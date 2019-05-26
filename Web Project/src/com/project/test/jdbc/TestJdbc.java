@@ -1,4 +1,4 @@
-package com.project.jdbc;
+package com.project.test.jdbc;
 
 import java.io.IOException;
 import java.io.PrintWriter;
