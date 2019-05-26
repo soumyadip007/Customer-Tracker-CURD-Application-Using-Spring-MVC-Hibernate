@@ -16,7 +16,7 @@ import com.project.spring.entity.Customer;
 public class CustomerDAOimplement implements CustomerDAO {
 
 	// need to inject the session factory
-		@Autowired(required = true)
+		@Autowired
 		private SessionFactory sessionFactory;
 				
 		@Override
@@ -28,7 +28,7 @@ public class CustomerDAOimplement implements CustomerDAO {
 					
 			// create a query
 			Query<Customer> theQuery = 
-					currentSession.createQuery("from Customer", Customer.class);
+					currentSession.createQuery("from customer", Customer.class);
 			
 			// execute query and get result list
 			List<Customer> customers = theQuery.getResultList();
