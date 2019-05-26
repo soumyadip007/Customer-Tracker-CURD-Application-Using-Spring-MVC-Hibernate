@@ -14,25 +14,19 @@ import com.project.spring.entity.Customer;
 @Controller
 @RequestMapping("/customer")
 public class CustomerController {
-	
-	//Inject the DAO into the controller
-	
+
+	// need to inject the customer dao
 	@Autowired
 	private CustomerDAO customerDAO;
-		
 	
 	@RequestMapping("/list")
-	public String listCustomer(Model theModel)
-	{
+	public String listCustomers(Model theModel) {
 		
-		//get the customer from the DAO
-		List<Customer> theCustomer=customerDAO.getCustomer();
-		
-		
-		//Add customer to model
-		theModel.addAttribute("customer",theCustomer);
-		
-		
+		// get customers from the dao
+		List<Customer> theCustomers = customerDAO.getCustomers();
+				
+		// add the customers to the model
+		theModel.addAttribute("customers", theCustomers);
 		
 		return "listcustomer";
 	}
