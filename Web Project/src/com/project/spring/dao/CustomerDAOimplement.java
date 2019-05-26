@@ -15,32 +15,26 @@ import com.project.spring.entity.Customer;
 @Repository
 public class CustomerDAOimplement implements CustomerDAO {
 
-	@Autowired
-	private SessionFactory sessionfactory;
-	
-	
-	@Override
-	@Transactional
-	public List<Customer> getCustomer() {
-		
-		
-		//get the current hibernate session
-		Session session=(Session) sessionfactory.getSessionFactory();
-		
-		
-		//Create query
-		Query<Customer> query=session.createQuery("form customer",Customer.class);
-		
-	
-		//execute
-		List<Customer> customer=query.getResultList();
-		
-		
-		
-		//return the result
-		return customer;
-		
-	
-	}
+	// need to inject the session factory
+		@Autowired(required = true)
+		private SessionFactory sessionFactory;
+				
+		@Override
+		@Transactional
+		public List<Customer> getCustomer() {
+			
+			// get the current hibernate session
+			Session currentSession = sessionFactory.getCurrentSession();
+					
+			// create a query
+			Query<Customer> theQuery = 
+					currentSession.createQuery("from Customer", Customer.class);
+			
+			// execute query and get result list
+			List<Customer> customers = theQuery.getResultList();
+					
+			// return the results		
+			return customers;
+		}
 
 }
