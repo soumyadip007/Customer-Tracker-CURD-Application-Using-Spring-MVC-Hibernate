@@ -27,11 +27,13 @@
    
   <h1 class="display-2">Customer Tracker</h1>
   
-  <h3 class="display-4">Add New Customer</h3>
+  <h3 class="display-4">Add/Update Customer</h3>
   <br>
 <form:form action="saveForm" class="form-control"  modelAttribute="customer" method="post">
 
- First Name: <form:input type="text" class="form-control"  path="firstName" placeholder="Enter first name" "/>
+<form:hidden path="id"/>
+
+ First Name: <form:input type="text" class="form-control"  path="firstName" placeholder="Enter first name" />
   <br>
   
    Last Name: <form:input type="text" class="form-control"  path="lastName" placeholder="Enter last name"/>
@@ -42,9 +44,10 @@
  	Email: <form:input path="email" class="form-control"  placeholder="Enter email"/>
    
   <br>
-  <input type="submit"class="btn btn-success"   value="Add Customer"/>
+  <input type="submit" class="btn btn-success"   value="Save"/>
 
 </form:form>
+
 <br><br>
 
 <a href="${pageContext.request.contextPath}/customer/list">Back to list page</a>

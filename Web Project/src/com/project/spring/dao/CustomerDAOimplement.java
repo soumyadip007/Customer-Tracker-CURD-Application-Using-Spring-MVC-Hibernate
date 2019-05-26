@@ -46,7 +46,7 @@ public class CustomerDAOimplement implements CustomerDAO {
 				Session currentSession = sessionFactory.getCurrentSession();
 								
 			// create a query
-				currentSession.save(theCustomer);
+				currentSession.saveOrUpdate(theCustomer);
 				
 				
 		}
