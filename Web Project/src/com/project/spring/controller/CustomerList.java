@@ -12,6 +12,6 @@ public class CustomerList {
 	@RequestMapping("/list")
 	public String listCustomer(Model theModel)
 	{
-		return "listCustomer";
+		return "listcustomer";
 	}
 }
