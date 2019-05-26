@@ -16,8 +16,12 @@
 <br><br>
 <div class="container">
   <div class="row"> 
-  
    <div class="col-sm">
+   
+   
+   
+  <h1 class="display-2">Customer Tracker</h1>
+  <br>
 <table  class="table table-striped table-dark">
   <thead >
 
