@@ -5,32 +5,45 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.min.css" type="text/css">
+	
+    <script src="${pageContext.request.contextPath}/resources/bootstrap/js/bootstrap.min.js"></script>
+
 <meta charset="ISO-8859-1">
 <title>List</title>
 </head>
 <body>
+<br><br>
+<div class="container">
+  <div class="row"> 
+  
+   <div class="col-sm">
+<table  class="table table-striped table-dark">
+  <thead >
 
-
-<table>
 <tr>
-	<th>First Name</th>
-	<th>Last Name</th>
-	<th>Email</th>
+	<th scope="col">First Name</th>
+	<th scope="col">Last Name</th>
+	<th scope="col">Email</th>
 </tr>
-
+</thead  >
+  <tbody>
 <c:forEach var="temp" items="${customers}">
 <tr>
-	<th>${temp.firstName}</th>
-	<th>${temp.lastName}</th>
-	<th>${temp.email}</th>
+	<td>${temp.firstName}</td>
+	<td>${temp.lastName}</td>
+	<td>${temp.email}</td>
 </tr>
 
-
-
 </c:forEach>
-
+</tbody>
 </table>
-
+</div>
+</div>
+</div>
 
 
 </body>
