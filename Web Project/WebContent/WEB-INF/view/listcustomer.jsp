@@ -20,8 +20,8 @@
 
 <c:forEach var="temp" items="${customers}">
 <tr>
-	<th>${temp.firstname}</th>
-	<th>${temp.lastname}</th>
+	<th>${temp.firstName}</th>
+	<th>${temp.lastName}</th>
 	<th>${temp.email}</th>
 </tr>
 
