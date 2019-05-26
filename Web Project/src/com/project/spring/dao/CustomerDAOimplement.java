@@ -54,6 +54,7 @@ public class CustomerDAOimplement implements CustomerDAO {
 		@Override
 		@Transactional
 		public Customer getCustomer(int theID) {
+			
 			// get the current hibernate session
 			Session currentSession = sessionFactory.getCurrentSession();
 		
@@ -62,5 +63,28 @@ public class CustomerDAOimplement implements CustomerDAO {
 			
 			return theCustomer;
 		}
+
+		@Override
+		public void deleteCustomer(int id) {
+		
+
+			// get the current hibernate session
+			Session currentSession = sessionFactory.getCurrentSession();
+		
+			
+			//delete the id
+			Query theQuery=currentSession.createQuery("delete from Customer where if=:theID");
+			theQuery.setParameter("theID",id);
+			
+			theQuery.executeUpdate();
+
+		//	Customer theCustomer=currentSession.get(Customer.class,id);
+
+		//	System.out.println("Geting Customer\n :");
+			
+			//currentSession.delete(theCustomer);
+			
+		}
+		
 
 	}

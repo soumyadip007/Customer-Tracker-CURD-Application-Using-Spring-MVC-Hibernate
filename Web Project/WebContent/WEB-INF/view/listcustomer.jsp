@@ -36,6 +36,7 @@ onclick="window.location.href='showFormForAdd'; return false;"
 	<th scope="col">Last Name</th>
 	<th scope="col">Email</th>
 	<th scope="col">Update</th>
+	<th scope="col">Delete</th>
 </tr>
 </thead  >
   <tbody>
@@ -44,8 +45,8 @@ onclick="window.location.href='showFormForAdd'; return false;"
 	<td>${temp.firstName}</td>
 	<td>${temp.lastName}</td>
 	<td>${temp.email}</td>
-	<td>
 	
+<td>	
 <c:url var="updateLink" value="/customer/showFormForUpdate">
 	<c:param name="customerID" value="${temp.id}" />
 </c:url>	
@@ -53,9 +54,18 @@ onclick="window.location.href='showFormForAdd'; return false;"
 <input type="button" class="btn btn-outline-primary" value="Update"
 onclick="window.location.href='showFormForUpdate?id=${temp.id}'; return false;"
 />-->	
-<a href="${updateLink }" >Update</a>
+<a href="${updateLink}" >Update</a>
+</td>
 
-	</td>
+	
+<td>
+<c:url var="deleteLink" value="/customer/delete">
+	<c:param name="customerID" value="${temp.id}" />
+</c:url>
+<a href="${deleteLink}" 
+onclick="if (!(confirm('Are you sure that you want to delete this customer? '))) return false"
+>Delete</a>
+</td>
 </tr>
 
 </c:forEach>
